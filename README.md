@@ -107,28 +107,158 @@ Q(t+1)=T′Q(t)+TQ(t)′
 
 
 ### PROGRAM 
-/*
+  
+  SR Flipflop
+  
+  module srflipflop(ss,r,clk,q,qbar);
+  
+  
+  input s,r,clk;
+  
+  output q,qbar;
+  
+  reg q,qbar;
+  
+  always@(posedge clk)
+  
+  begin
+  
+  q<=s|(~r&q);
+  
+  qbar<=r|(~s&~q);
+  
+  end
+  
+  endmodule
+  
+  
+  JK Flipflop
+  
+  module jkflipflop(j,k,clk,q,qbar);
+ 
+  input j,k,clk;
+  
+  output q,qbar;
+  
+  reg q,qbar;
+  
+  always@(posedge clk)
+  
+  begin
+  
+  q<=(j&~q)|(~k&q);
+  
+  qbar<=~q;
+  
+  end
+  
+  endmodule
+  
+  
+  T Flipflop
+  
+  module tflipflop(clk,t,q,qbar);
+  
+  input clk,t;
+  
+  output q,qbar;
+  
+  reg q,qbar;
+  
+  always@(posedge clk)
+  
+  begin
+  
+  q<=(t&~q)|(~t&q);
+  
+  qbar<=~q;
+  
+  end
+  
+  endmodule
+  
+  
+  D Flipflop
+  
+  module dflipflop(d,clk,q,qbar);
+  
+  input d,clk;
+  
+  output q,qbar;
+  
+  reg q,qbar;
+  
+  always@(posedge clk)
+  
+  begin
+  
+  q<=d;
+  
+  qbar<=~q;
+  
+  end
+  
+  endmodule
+  
+  
 Program for flipflops  and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+
+Developed by: YUVASRI.K
+
+RegisterNumber: 212222050061 
 
 
 
 
 
 
-### RTL LOGIC FOR FLIPFLOPS 
+
+### RTL LOGIC FOR FLIPFLOPS
 
 
+SR Flipflop
+
+![rtl srf (2) (1)](https://github.com/yuvasri2005/Experiment--05-Implementation-of-flipflops-using-verilog/assets/129949620/84c2f4e6-039c-4e4c-94a6-f942c44a0136)
 
 
+JK Flipflop
+
+![image](https://github.com/yuvasri2005/Experiment--05-Implementation-of-flipflops-using-verilog/assets/129949620/692baa78-1118-4810-802e-1cb86041dd77)
+
+T Flipflop
+
+![image](https://github.com/yuvasri2005/Experiment--05-Implementation-of-flipflops-using-verilog/assets/129949620/b73e2dbe-a518-4d64-92b6-bb91d2ad1dc1)
+
+D Flipflop
+
+![image](https://github.com/yuvasri2005/Experiment--05-Implementation-of-flipflops-using-verilog/assets/129949620/db71b05f-6060-4e92-9c62-331db986ac6b)
 
 
 
 
 
 ### TIMING DIGRAMS FOR FLIP FLOPS 
+
+SR Flipflop
+
+![image](https://github.com/yuvasri2005/Experiment--05-Implementation-of-flipflops-using-verilog/assets/129949620/e4ac91e9-4167-4233-a2a6-28ea7c88b5bc)
+
+
+JK Flipflop
+
+![image](https://github.com/yuvasri2005/Experiment--05-Implementation-of-flipflops-using-verilog/assets/129949620/03f377c3-17cc-4a59-91a5-b6c25b3d5269)
+
+T Flipflop
+
+![image](https://github.com/yuvasri2005/Experiment--05-Implementation-of-flipflops-using-verilog/assets/129949620/247a85d8-bc03-40ce-b106-fa3cffaa37ac)
+
+
+
+D Flipflop
+
+
+![image](https://github.com/yuvasri2005/Experiment--05-Implementation-of-flipflops-using-verilog/assets/129949620/6e46ea6e-0ca5-4f6e-8e95-a1c5dd237b12)
+
 
 
 
@@ -138,3 +268,5 @@ RegisterNumber:
 
 
 ### RESULTS 
+
+    Thus the given implementation of all flipflops such as sr flipflop, jk flipflop,T flipflop, D flipflop are done using verilog programming.
